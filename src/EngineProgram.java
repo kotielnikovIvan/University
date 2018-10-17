@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*
  * Задача на взаимодействие между классами. Разработать систему «Вступительные экзамены».
  * Абитуриент регистрируется на Факультет, сдает Экзамены. 
@@ -6,6 +8,14 @@
  */
 
 public class EngineProgram {
+	
+	Scanner in;
+	Faculty FAIT;
+	public EngineProgram() {
+		FAIT = new Faculty();
+		in = new Scanner (System.in);  
+	}
+	
 	
 	
 	

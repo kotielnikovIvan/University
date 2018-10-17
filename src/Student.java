@@ -13,7 +13,7 @@ public class Student {
     private int gradeFoMath;
     private int gradeForComputerScience;
     private int gradeForEnglish;
-    
+      
      
 	public int getGradeFoMath() {
 		return gradeFoMath;

@@ -5,7 +5,7 @@ public class TestProgram {
 		Faculty FAIT = new Faculty();
 		
 		FAIT.fillTheGroup();
-		FAIT.fillTheTeacher();
+		FAIT.fillTheTeacher();    
 		FAIT.exam();
 
 	}
