@@ -2,11 +2,11 @@
 public class TestProgram {
 
 	public static void main(String[] args) {
-		Faculty FAIT = new Faculty();
+		EngineProgram eng = new EngineProgram();
 		
-		FAIT.fillTheGroup();
-		FAIT.fillTheTeacher();    
-		FAIT.exam();
+		eng.findRating();
+		
+		
 
 	}
 

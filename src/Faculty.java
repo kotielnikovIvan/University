@@ -4,20 +4,22 @@
  * Преподаватель выставляет Оценку. Система подсчитывает средний бал и определяет 
  * Абитуриента, зачисленного в учебное заведение.
  */
-
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-public class Faculty {
-
+public class Faculty { 
+	 Iterator <Student> it;
 	 Scanner in;
-	 public ArrayList<Student> group;
+	 Scanner in1;
+	 public ArrayList<Student> abiturient;
 	 public Teacher teacher;
+	 
 	 public Faculty() {
-		 group = new ArrayList<>();
+		 abiturient = new ArrayList<>();
 		 teacher = new Teacher();
 	 }
-
+  
 	 public void fillTheGroup() {
 		 Student[] tempStud = new Student[5];
 		 
@@ -52,7 +54,7 @@ public class Faculty {
 		 tempStud[4].setGroup("IUST");
 		 
 		 for ( int i = 0; i < 5; i++) {
-			 group.add(tempStud[i]);
+			 abiturient.add(tempStud[i]);
 		 }
 	 }
 	 
@@ -60,18 +62,20 @@ public class Faculty {
 		 teacher.setfName("Olga");
 		 teacher.setlName("Bondarchuk");
 		 teacher.setAge(35);
-		 teacher.setScientificLevel("doctor");
+		 teacher.setScientificLevel("dr");
 	 }
 	 
 	 public void exam() {
+		    it = abiturient.iterator();
 			in = new Scanner(System.in);
 			int mathMark;
-			int CSMark;
-			int engMark;  
-			//Student tempStud = new Student();
+			int CSMark; 
+			int engMark;
+			int i = 0;
 			System.out.println("This exams takes " + teacher.getScientificLevel() + " " + teacher.getfName() + " " + teacher.getlName());
-			for ( int i = 0; i < group.size(); i++) {
-				Student tempStud = group.get(i);
+			for (Student tempStud:abiturient) {  
+				tempStud = (Student) abiturient.get(i); 
+				System.out.println(tempStud.getfName() + " " + tempStud.getlName() + "'s marks: ");
 				System.out.println("Mark for Math exam: ");
 				mathMark = in.nextInt();
 				System.out.println("Mark for Computer Science exam: ");
@@ -81,14 +85,24 @@ public class Faculty {
 				tempStud.setGradeFoMath(mathMark);
 				tempStud.setGradeForComputerScience(CSMark);
 				tempStud.setGradeForEnglish(engMark);
-				group.add(i, tempStud);
-				
+				i++;
 			}
 			
 		}
 	 
-	 
-	
-	
+	 public void addToTheFaculty() {
+		 in = new Scanner(System.in);
+		 in1 = new Scanner(System.in);
+		 Student tempStud = new Student();
+		 System.out.println("Please enter your name: ");
+		 tempStud.setfName(in1.nextLine());
+		 System.out.println("Enter your second name: ");
+		 tempStud.setlName(in1.nextLine());
+		 System.out.println("Enter your course: ");
+		 tempStud.setCourse(in.nextInt());
+		 System.out.println("Enter your group: ");
+		 tempStud.setGroup(in1.nextLine());	 
+		 abiturient.add(tempStud);
+	 }
 	
 }
