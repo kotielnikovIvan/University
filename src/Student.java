@@ -13,7 +13,14 @@ public class Student {
     private int gradeFoMath;
     private int gradeForComputerScience;
     private int gradeForEnglish;
+    private int everageGrade;
       
+	public int getEverageGrade() {
+		return everageGrade;
+	}
+	public void setEverageGrade(int everageGrade) {
+		this.everageGrade = everageGrade;
+	}
 	public int getGradeFoMath() {
 		return gradeFoMath;
 	}
@@ -56,4 +63,5 @@ public class Student {
 	public void setCourse(int course) {
 		this.course = course;
 	}
+
 }

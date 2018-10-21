@@ -5,14 +5,13 @@
  * јбитуриента, зачисленного в учебное заведение.
  */
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class Faculty { 
-	 Iterator <Student> it;
 	 Scanner in;
 	 Scanner in1;
-	 public ArrayList<Student> abiturient;
+	 public List<Student> abiturient;
 	 public Teacher teacher;
 	 
 	 public Faculty() {
@@ -51,7 +50,7 @@ public class Faculty {
 		 tempStud[4].setfName("Tasya");
 		 tempStud[4].setlName("Girich");
 		 tempStud[4].setCourse(3);
-		 tempStud[4].setGroup("IUST");
+		 tempStud[4].setGroup("IUST");  
 		 
 		 for ( int i = 0; i < 5; i++) {
 			 abiturient.add(tempStud[i]);
@@ -62,33 +61,8 @@ public class Faculty {
 		 teacher.setfName("Olga");
 		 teacher.setlName("Bondarchuk");
 		 teacher.setAge(35);
-		 teacher.setScientificLevel("dr");
+		 teacher.setScientificLevel("dr");  
 	 }
-	 
-	 public void exam() {
-		    it = abiturient.iterator();
-			in = new Scanner(System.in);
-			int mathMark;
-			int CSMark; 
-			int engMark;
-			int i = 0;
-			System.out.println("This exams takes " + teacher.getScientificLevel() + " " + teacher.getfName() + " " + teacher.getlName());
-			for (Student tempStud:abiturient) {  
-				tempStud = (Student) abiturient.get(i); 
-				System.out.println(tempStud.getfName() + " " + tempStud.getlName() + "'s marks: ");
-				System.out.println("Mark for Math exam: ");
-				mathMark = in.nextInt();
-				System.out.println("Mark for Computer Science exam: ");
-				CSMark = in.nextInt();
-				System.out.println("Mark for English exam: ");
-				engMark = in.nextInt();
-				tempStud.setGradeFoMath(mathMark);
-				tempStud.setGradeForComputerScience(CSMark);
-				tempStud.setGradeForEnglish(engMark);
-				i++;
-			}
-			
-		}
 	 
 	 public void addToTheFaculty() {
 		 in = new Scanner(System.in);
@@ -104,5 +78,7 @@ public class Faculty {
 		 tempStud.setGroup(in1.nextLine());	 
 		 abiturient.add(tempStud);
 	 }
+	 
+	 
 	
 }
